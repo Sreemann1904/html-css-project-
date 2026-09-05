@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Shop Menu</title>
+        <meta charset="UTF-8">
+        <meta name="author" content="Sreemann">
+        <meta name="description" content="Working Hours of Shop">
+        <link rel="stylesheet" href="D:\Programing and Projects\Html & Css Project_1\Program\static\center.css">
+        <link rel="icon" type="image/png" href="D:\Programing and Projects\Html & Css Project_1\Photos\icon.png">
+        <script>
+        function orderNow() {
+          document.getElementById("orderBtn").innerText = "Ordered!";
+          document.getElementById("orderBtn").style.backgroundColor = "#9d4edd"; // Change button color
+      }
+      
+      function cancelOrder() {
+          // Reset Order Button
+          document.getElementById("orderBtn").innerText = "Order";
+          document.getElementById("orderBtn").style.backgroundColor = ""; // Reset button color
+      
+          // Reset Radio Buttons (Soft Drinks)
+          let radios = document.getElementsByName("Soft Drinks");
+          for (let i = 0; i < radios.length; i++) {
+              radios[i].checked = false;
+          }
+      
+          // Reset Taco Selection
+          document.getElementById("Tacos").selectedIndex = -1;
+      }
+    </script>
+    </head>
+    <body>
+        <header>
+        <h1>Taco Bell Menu</h1>
+    </header>
+    <div class="box">
+      <ul>
+        <!-- <P>Click the Links to vist next page</P> -->
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#" class="active">Our Menu</a></li>
+        <li><a href="D:\Programing and Projects\Html & Css Project_1\Program\templates\contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+        <hr>
+        <h3>Our Menu</h3>
+        <div class="side">
+            <img src="D:\Programing and Projects\Html & Css Project_1\Photos\plates-of-vegan-foods-ready-serve-restaurant-London.webp" width="400" height="200">
+            </div>
+            <div class="right">
+            <img src="D:\Programing and Projects\Html & Css Project_1\Photos\cover-9-fine-dining.jpg"width="400" height="200">
+        </div>
+        <nav id="Menu">
+            <table>
+                <!-- <caption>Our Tacos</caption> -->
+              <thead>
+                <tr>
+                <th>Taco</th>
+                <th>Qty</th>
+                <th>Price</th>
+              </tr>
+              </thead>
+              <tbody>
+            <tr>
+              <td rowspan="3">Hot and Spicy</td>
+              <td>1</td>
+              <td>50$</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>90$</td>  
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>130$</td>
+            </tr>
+            <tr>
+            <td rowspan="3">Hot and Mexican</td>
+            <td>1</td>
+            <td>60$</td>
+           </tr>
+            <tr>
+              <td>2</td>
+              <td>100$</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>150$</td>
+            </tr>
+            <tr>
+                <td colspan="3">Chips & coke at 15$</td>
+            </tr>
+            </table>
+          </nav><br>
+          <fieldset>
+            <div class="Float">
+              <img src="D:\Programing and Projects\Html & Css Project_1\Photos\MC_Street-tacos.webp"width="800" height="300"></div>
+            <legend><H2>Order it Now!</H2></legend>
+            <h2>Pick Your Favorite Taco Flavor!</h2>  
+          <select name="Tacos" id="Tacos" multiple="5">
+             <optgroup label="Spicy Tacos">Spicy Tacos
+             <option value="Hot & Spicy Chicken Tacos">Hot & Spicy Chicken Tacos</option>
+             <option value="Spicy Shrimp Tacos">Spicy Shrimp Tacos</option>
+             <option value="Fire-Roasted Beef Tacos">Fire-Roasted Chicken Tacos</option>
+             <option value="Ghost Pepper Tacos">Ghost Pepper Tacos</option>
+             <option value="Korean Spicy BBQ Tacos">Korean Spicy BBQ Tacos</option>
+            </optgroup>
+            <optgroup label="Traditional Mexican Tacos">Traditional Mexican Tacos
+              <option value="Tacos al Pastor">Tacos al Pastor</option>
+              <option value="Tacos de Carnitas">Tacos de Carnitas</option>
+              <option value="Tacos de Barbacoa ">Tacos de Barbacoa </option>
+              <option value="Tacos de Birria">Tacos de Birria</option>
+             </optgroup><br>
+          </select>
+         <legend><h2>Soft Drinks</h2></legend>
+         <p>
+          <input type="radio" name="Soft Drinks" id="Coke" value="Coke">
+          <label for="Coke">Coke</label>
+         </p>
+         <p>
+          <input type="radio" name="Soft Drinks" id="Pepsi" value="Pepsi">
+          <label for="Pepsi">Pepsi</label>
+         </p>
+         <p>
+          <input type="radio" name="Soft Drinks" id="Red Bull" value="Red Bull">
+          <label for="Red Bull">Red Bull</label>
+         </p>
+         <div class="Order">
+         <p >
+          <button id="orderBtn" onclick="orderNow()">Order</button></a>
+          <button id="cancelBtn" onclick="cancelOrder()">Cancel Order</button>
+         </p>
+        </fieldset>
+        <br>
+        <fieldset>
+        <h2><u>We are open 6 days a week</u></h2>
+        <dl>
+            <dt>Monday-Thursday</dt>
+            <dd>11am-9pm</dd>
+            <dt>Friday-Sunday</dt>
+            <dd>11am-11pm</dd>
+        </dl>
+    </fieldset>
+    <br>
+        <footer>
+        Copyrights&copy; Taco Bell
+    </footer>
+    </body>
+</html>
